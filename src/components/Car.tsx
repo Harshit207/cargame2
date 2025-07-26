@@ -8,13 +8,14 @@ interface CarProps {
 const Car: React.FC<CarProps> = ({ position, crashed }) => {
   return (
     <div
-      className={`absolute transition-all duration-100 ease-out ${
+      className={`absolute ${
         crashed ? 'animate-pulse' : ''
       }`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: crashed ? 'rotate(25deg)' : 'rotate(0deg)',
+        transition: crashed ? 'transform 0.3s ease-out' : 'none',
       }}
     >
       <div className={`w-12 h-20 relative ${crashed ? 'opacity-70' : ''}`}>
