@@ -1,13 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Car Driving Game - Microsoft Surf Style</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Highway Runner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI Overlay -->
+        <div id="ui">
+            <div id="score">Score: 0</div>
+            <div id="speed">Speed: 60 km/h</div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameOver" class="hidden">
+            <div class="game-over-content">
+                <h1>Game Over!</h1>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Distance: <span id="finalDistance">0</span>m</p>
+                <button id="restartBtn">Press R to Restart</button>
+            </div>
+        </div>
+        
+        <!-- Start Screen -->
+        <div id="startScreen">
+            <div class="start-content">
+                <h1>🏎️ 3D Highway Runner</h1>
+                <p>Navigate through traffic in this endless 3D driving game!</p>
+                <div class="controls">
+                    <p>🎮 Use ARROW KEYS or A/D to steer</p>
+                    <p>🚗 Avoid obstacles and survive as long as possible</p>
+                    <p>⚡ Speed increases over time</p>
+                </div>
+                <button id="startBtn">Start Game</button>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div id="instructions" class="hidden">
+            <p>Use ← → or A D to steer • Avoid obstacles!</p>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
 </html>
