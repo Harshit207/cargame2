@@ -21,8 +21,8 @@ function App() {
   } = useGameEngine();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 flex items-center justify-center p-4">
-      <div className="relative bg-gray-800 rounded-lg shadow-2xl overflow-hidden border-4 border-gray-700">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-4">
+      <div className="relative bg-gray-900 rounded-xl shadow-2xl overflow-hidden border-4 border-gray-600">
         <div 
           className="relative"
           style={{ width: gameWidth, height: gameHeight }}
@@ -57,8 +57,8 @@ function App() {
       
       {/* Instructions */}
       {gameState === 'playing' && (
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded-lg">
-          <p className="text-sm">Use ← → or A D to steer</p>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-60 px-4 py-2 rounded-lg backdrop-blur-sm">
+          <p className="text-sm">Use ← → or A D to steer • Avoid obstacles!</p>
         </div>
       )}
     </div>
